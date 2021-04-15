@@ -1,3 +1,4 @@
+// Effect local, run on all clients.
 if (count CACHES <= 0) then {
 	if (side player == ATTACKER_SIDE) then {
 		["end1", true, 2] call BIS_fnc_endMission;
