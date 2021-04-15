@@ -1,0 +1,3 @@
+#include "MantiS_Randomise\functions.hpp"
+
+respawnOnStart = 0;
