@@ -12,7 +12,11 @@ for "_i" from 1 to CACHE_AMOUNT do {
 
 	// createVehicle [type, position, markers, placement, special]
 	_cache = createVehicle [_crateClass, _pos];
+
 	clearItemCargoGlobal _cache;
+	clearBackpackCargoGlobal _cache;
+	clearWeaponCargoGlobal _cache;
+	clearMagazineCargoGlobal _cache;
 
 	//systemChat format ["AREA: %1, POS: %2, CACHE: %3", _area, _pos, _cache];
 
