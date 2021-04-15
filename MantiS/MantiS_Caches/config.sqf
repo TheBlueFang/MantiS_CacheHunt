@@ -4,4 +4,4 @@ CACHE_AMOUNT = 3; //How many caches will be spawned in the mission
 DEFENDER_SIDE = east;
 ATTACKER_SIDE = west;
 
-MANTIS_DEBUG = true;
+MANTIS_DEBUG = false;
