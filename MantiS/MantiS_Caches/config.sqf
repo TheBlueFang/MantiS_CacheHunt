@@ -3,3 +3,5 @@ CACHE_CLASSES = ["Box_FIA_Wps_F"];
 CACHE_AMOUNT = 3; //How many caches will be spawned in the mission
 DEFENDER_SIDE = east;
 ATTACKER_SIDE = west;
+
+MANTIS_DEBUG = true;

@@ -1,16 +1,21 @@
-if (side player != ATTACKER_SIDE) exitWith {};
-params ["_cache"];
+params ["_cache", "_cacheNum", "_attackerSide"];
 
-_cacheNum = str(count CACHES);
-_taskName = vehicleVarName _cache;
+if (_cacheNum isEqualTo 0 || !{side player isEqualTo _attackerSide}) exitWith {};
+
+
+_taskName = _cache getVariable "missionName";
 private["_text"];
 
-if (count CACHES == 1) then {
-	_text = "You have destroyed a cache.\n" + _cacheNum + " cache remains."
+_text = format ["getVariable returned %1", _taskName];
+_text remoteExec ["systemChat", 0];
+
+if (_cacheNum == 1) then {
+	_text = "You have destroyed a cache.\n" + str _cacheNum + " cache remains."
 } else {
-	_text = "You have destroyed a cache.\n" + _cacheNum + " caches remain."
+	_text = "You have destroyed a cache.\n" + str _cacheNum + " caches remain."
 };
-hintSilent _text;
+
+_text remoteExec ["hintSilent", 0];
 
 /*
 if (isServer) then {

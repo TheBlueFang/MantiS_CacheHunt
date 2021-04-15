@@ -14,6 +14,8 @@ class CfgFunctions
 			class createMarkers {};
 			class hideAreaMarkers {};
 			class endMission {};
+			class error {};
+			class debugShowCratesAdmin {};
 		};
 	};
 };

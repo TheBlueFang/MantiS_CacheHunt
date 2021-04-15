@@ -1,4 +1,5 @@
 // Effect global, run on server.
+// Creates question markers on the areas. Shows them in briefing if preprocessed.
 _i = 0;
 {
 	_markerstr = createMarker ["markername" + str(_i), getMarkerPos _x];
