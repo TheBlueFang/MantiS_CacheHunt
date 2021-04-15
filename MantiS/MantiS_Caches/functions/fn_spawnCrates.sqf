@@ -7,6 +7,7 @@ if (_allCacheAreas isEqualTo []) exitWith {
 _caches = [];
 
 private ["_area"];
+_counter = 0;
 for "_i" from 1 to CACHE_AMOUNT do {
 
 	// If ran out of areas to randomise
@@ -41,10 +42,21 @@ for "_i" from 1 to CACHE_AMOUNT do {
 		params ["_cache", "_damage"];
 		if ((damage _cache) >= 1) then {
 			CACHES deleteAt (CACHES find _cache);
-			[_cache, count CACHES] remoteExec ["MantiS_fnc_taskHint", 0, false];
+
+			if (count CACHES <= 0) then {
+				[west] remoteExec ["MantiS_fnc_endMission", 0];
+			};
+			
+			[_cache, count CACHES, ATTACKER_SIDE] remoteExec ["MantiS_fnc_taskHint", 0];
 			[_cache getVariable "missionName", "FAILED", true] call BIS_fnc_taskSetState;
 		};
 	}];
+	_counter = _counter + 1;
+};
+
+if (MANTIS_DEBUG) then {
+	_format = format ["%1 caches created", _counter];
+	_format remoteExec ["systemChat", 0];
 };
 
 _caches
