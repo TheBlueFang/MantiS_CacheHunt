@@ -1,4 +1,7 @@
 _text = param [0, objNull];
+if (typeName _text isEqualTo "ARRAY") then {
+	_text = _text select 0;
+};
 
 if (_text isEqualTo objNull) exitWith {"MANTIS_FNC_ERROR: Function was called improperly. No text parameter was given. CRITICAL." call MantiS_fnc_error;};
 
