@@ -21,12 +21,6 @@ call MantiS_fnc_createMarkers;
 
 sleep 1;
 
-[] spawn {
-	waitUntil {count CACHES <= 0};
-	call MantiS_fnc_endMission;
+if (MANTIS_DEBUG) then {
+	[_allCaches] remoteExec ["MantiS_fnc_debugShowCratesAdmin", 0, true];
 };
-
-/*
-	NOTES 
-	1. Get cache areas format [markerName, [ [markerName, [0,0,0], [0,0,0]], [markerName, [0,0,0], [0,0,0]] ]
-*/
