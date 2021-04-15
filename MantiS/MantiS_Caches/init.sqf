@@ -17,5 +17,11 @@ _allCaches = [_allAreas] call MantiS_fnc_spawnCrates;
 [] call MantiS_fnc_createMarkers;
 
 if (MANTIS_DEBUG) then {
-	[_allCaches] remoteExec ["MantiS_fnc_debugShowCratesAdmin", 0, true];
+	/*
+	if (isMultiplayer) then {
+		[_allCaches] remoteExec ["MantiS_fnc_debugShowCratesAdmin", -2, true];
+	} else {
+		[_allCaches] remoteExec ["MantiS_fnc_debugShowCratesAdmin", 0, true];
+	};*/
+	
 };
