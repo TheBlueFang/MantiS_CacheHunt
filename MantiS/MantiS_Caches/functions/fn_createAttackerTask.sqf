@@ -1,1 +1,2 @@
+// Effect gloabl, run on server.
 [ATTACKER_SIDE, "DestroyCaches", ["Destroy " + str(count CACHES) + " enemy caches to win.", "Destroy " + str(count CACHES) + " caches", ""], objNull, "ASSIGNED", 1, true, "attack"] call BIS_fnc_taskCreate;

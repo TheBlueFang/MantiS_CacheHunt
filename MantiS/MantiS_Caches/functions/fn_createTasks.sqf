@@ -1,3 +1,5 @@
+
+
 for "_i" from 1 to (count CACHES) do {
 	_object = CACHES select (_i - 1);
 	_pos = getPos _object;
@@ -6,8 +8,6 @@ for "_i" from 1 to (count CACHES) do {
 	_object setVehicleVarName _missionName;
 
 	[DEFENDER_SIDE, [_missionName, "DefendCaches"] , ["Defend this cache", "Cache"], _pos, "CREATED", 2, false, "defend"] call BIS_fnc_taskCreate;
-
-	systemChat format ["%1, %2", _pos, _object];
 
 	_object addEventHandler ["Explosion", {
 		params ["_vehicle", "_damage"];
