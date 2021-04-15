@@ -2,9 +2,9 @@ class CfgFunctions
 {
 	class MantiS
 	{
-		class Randomise
+		class Caches
 		{
-			file = "MantiS_Randomise\functions";
+			file = "MantiS\MantiS_Caches\functions";
 			class updateCacheAreas {};
 			class spawnCrates {};
 			class createTasks {};

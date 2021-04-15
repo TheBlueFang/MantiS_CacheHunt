@@ -24,4 +24,4 @@ _allAreas = [];
 
 } forEach CACHE_AREAS;
 
-ALL_AREAS = _allAreas;
+_allAreas;
