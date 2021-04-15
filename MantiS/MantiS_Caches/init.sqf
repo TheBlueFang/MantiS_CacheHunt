@@ -11,6 +11,7 @@ _allAreas = [] call MantiS_fnc_updateCacheAreas;
 [] call MantiS_fnc_createParentTask;
 
 _allCaches = [_allAreas] call MantiS_fnc_spawnCrates;
+CACHES append _allCaches;
 
 [] call MantiS_fnc_createTasks;
 [] call MantiS_fnc_createAttackerTask;
