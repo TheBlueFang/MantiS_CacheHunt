@@ -38,11 +38,11 @@ for "_i" from 1 to CACHE_AMOUNT do {
 	_caches pushBack _cache;
 
 	_cache addEventHandler ["Explosion", {
-		params ["_vehicle", "_damage"];
-		if ((damage _vehicle) >= 1) then {
-			CACHES deleteAt (CACHES find _vehicle);
-			[_vehicle] remoteExec ["MantiS_fnc_taskHint", 0, false];
-			[_vehicle getVariable "missionName", "FAILED", true] call BIS_fnc_taskSetState;
+		params ["_cache", "_damage"];
+		if ((damage _cache) >= 1) then {
+			CACHES deleteAt (CACHES find _cache);
+			[_cache, count CACHES] remoteExec ["MantiS_fnc_taskHint", 0, false];
+			[_cache getVariable "missionName", "FAILED", true] call BIS_fnc_taskSetState;
 		};
 	}];
 };

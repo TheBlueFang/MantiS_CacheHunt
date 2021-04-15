@@ -1,8 +1,7 @@
 if (side player != ATTACKER_SIDE) exitWith {};
-params ["_cache"];
+params ["_cache", "_cacheNum"];
 
-_cacheNum = str(count CACHES);
-_taskName = vehicleVarName _cache;
+_taskName = _cache getVariable "missionName";
 private["_text"];
 
 if (count CACHES == 1) then {
